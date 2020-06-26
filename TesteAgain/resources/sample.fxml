@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735" prefWidth="970.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <MenuBar layoutY="0" layoutX="0" prefWidth="970">
+        <menus>
+            <Menu mnemonicParsing="false" text="File">
+                <items>
+                    <MenuItem mnemonicParsing="false" onAction="#actClose" text="Close" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+                <items>
+                    <MenuItem mnemonicParsing="false" onAction="#actClear" text="Clear" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+    <ProgressBar fx:id="totalProgress" layoutX="50" layoutY="50" prefHeight="20" prefWidth="870.0" progress="0.0" />
+    <TableView fx:id="tblClasses" layoutX="50" layoutY="80" prefHeight="200.0" prefWidth="410">
+        <columns>
+            <TableColumn fx:id="clExamDate" prefWidth="102.5" text="Date" />
+            <TableColumn fx:id="clDaysRemaining" prefWidth="102.5" text="Days remaining" />
+            <TableColumn fx:id="clClassName" prefWidth="102.5" text="Class" />
+            <TableColumn fx:id="clPerHDone" prefWidth="102.5" text="(%)Done" />
+        </columns>
+    </TableView>
+    <Separator layoutX="470" layoutY="80" prefWidth="140.0" />
+    <Button layoutX="470" layoutY="90" mnemonicParsing="false" onAction="#actAddClass" prefWidth="140" text="Add" />
+    <TextField fx:id="txtClass" layoutX="470" layoutY="125" prefHeight="25" prefWidth="140" />
+    <DatePicker fx:id="txtDatePicker" layoutX="470" layoutY="160" prefHeight="25" prefWidth="140" />
+    <HBox layoutX="470" layoutY="195" prefHeight="25" prefWidth="140">
+        <TextField fx:id="hours" alignment="CENTER_RIGHT" prefWidth="60" />
+        <Label alignment="CENTER" prefHeight="25" prefWidth="20" text=":">
+            <font>
+                <Font name="Calibri Regular" size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="mins" prefWidth="60" />
+    </HBox>
+    <Separator layoutX="470" layoutY="230" prefWidth="140.0" />
+    <Button layoutX="470" layoutY="240" mnemonicParsing="false" onAction="#actRemoveClass" prefWidth="140" text="Remove" />
+    <ListView fx:id="lstHistoric" layoutX="620" layoutY="80" prefHeight="345" prefWidth="300" />
+
+    <ComboBox fx:id="cmbClasses" layoutX="50" layoutY="305" onAction="#actSelectClass" prefHeight="25" prefWidth="200" />
+
+    <ProgressBar fx:id="classProgress" layoutX="50" layoutY="355" prefHeight="20" prefWidth="550.0" progress="0.0" />
+    <ListView fx:id="lstTasks" layoutX="50" layoutY="385" prefHeight="300.0" prefWidth="550.0" />
+
+    <Button layoutX="620" layoutY="435" prefWidth="140" prefHeight="25" text="Days" onAction="#SeeDaysProgress"/>
+    <Button layoutX="780" layoutY="435" prefWidth="140" prefHeight="25" text="Tasks" onAction="#SeeTaskProgress"/>
+
+    <Separator layoutX="620" layoutY="470" prefWidth="290" />
+
+
+    <ProgressBar fx:id="taskProgress" layoutX="620" layoutY="480" prefHeight="25" prefWidth="140.0" progress="0.0" />
+    <Separator layoutX="620" layoutY="515" prefWidth="140" />
+    <Separator layoutX="620" layoutY="540" prefWidth="140" />
+    <Label layoutX="620" layoutY="545" prefHeight="25" prefWidth="140" text="How many done?">
+        <font>
+            <Font name="Calibri Regular" size="18.0" />
+        </font>
+    </Label>
+    <Spinner fx:id="spExDones" layoutX="620" layoutY="580" max="100" min="0" prefWidth="140" />
+    <Button layoutX="620" layoutY="615" mnemonicParsing="false" onAction="#actDoneExercise" prefWidth="140" text="Done" />
+    <Separator layoutX="620" layoutY="650" prefWidth="140" />
+    <Button layoutX="620" layoutY="660" mnemonicParsing="false" onAction="#actRemoveExercise" prefWidth="140" text="Sike" />
+
+    <Separator layoutX="770" layoutY="480" orientation="VERTICAL" prefHeight="205" />
+
+    <Label layoutX="780" layoutY="480" prefHeight="25" prefWidth="140" text="Designation:">
+        <font>
+            <Font name="Calibri Regular" size="18.0" />
+        </font>
+    </Label>
+    <TextField fx:id="txtTaskDesignation" layoutX="780" layoutY="515" prefHeight="25" prefWidth="140" />
+    <Label layoutX="780" layoutY="545" prefHeight="25" prefWidth="140" text="Max questions:">
+        <font>
+            <Font name="Calibri Regular" size="18.0" />
+        </font>
+    </Label>
+    <Spinner fx:id="spMaxQuestions" layoutX="780" layoutY="580" max="100" min="0" prefWidth="140" />
+    <Button layoutX="780" layoutY="615" mnemonicParsing="false" onAction="#actAddTask" prefWidth="140" text="Add" />
+    <Separator layoutX="780" layoutY="650" prefWidth="140" />
+    <Button layoutX="780" layoutY="660" mnemonicParsing="false" onAction="#actRemoveTask" prefWidth="140" text="Remove" />
+
+
+</AnchorPane>
